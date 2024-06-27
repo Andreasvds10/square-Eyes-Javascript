@@ -1,23 +1,66 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="/css/confirmation.css">
     <title>Order Confirmation</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const orderDetails = JSON.parse(localStorage.getItem('orderDetails')) || { items: 0, totalAmount: '0.00' };
+            document.getElementById('order-items').innerText = orderDetails.items;
+            document.getElementById('order-total').innerText = `$${orderDetails.totalAmount}`;
+        });
+    </script>
 </head>
 <body>
     <header>
         <div class="header-title">
-        <h1>Thank You for Your Order</h1>
-    </div>
-    <nav class="header-nav">
-        <a href="/html/home.html ">Home</a>
-        <a href="/html/products.html">Product</a>
-        <a href="/html/checkout.html">Checkout</a>
-    </nav>
+            <h1>Thank You for Your Order</h1>
+        </div>
+        <nav class="header-nav">
+            <a href="/html/home.html">Products</a>
+            <a href="/html/products.html">Home</a>
+            <a href="/html/checkout.html">Checkout</a>
+        </nav>
     </header>
     <main>
-      <p> Your order has been placed successfully. </p>
+        <section class="confirmation-message">
+            <h2>Your order has been placed successfully.</h2>
+            <p>We appreciate your business! If you have any questions, please email <a href="mailto:support@calleesquareeyes.com">support@calleesquareeyes.com</a>.</p>
+        </section>
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Order Number: <strong>#123456789</strong></p>
+            <p>Items: <strong id="order-items">0</strong></p>
+            <p>Total Amount: <strong id="order-total">$0.00</strong></p>
+        </section>
+        <section class="delivery-info">
+            <h2>Delivery Information</h2>
+            <p>Expected Delivery Date: <strong>July 5, 2024</strong></p>
+            <p>Shipping Address: <strong>1234 Movie Lane, Film City, CA 90210</strong></p>
+        </section>
+        <section class="support">
+            <h2>Need Help?</h2>
+            <p>If you need any assistance, please contact our customer support.</p>
+            <p>Email: <a href="mailto:support@calleesquareeyes.com">support@calleesquareeyes.com</a></p>
+            <p>Phone: <strong>123-456-7890</strong></p>
+        </section>
+        <section class="actions">
+            <a href="/html/home.html" class="```html
+button">Continue Shopping</a>
+            <a href="/html/order-history.html" class="button">View Order History</a>
+        </section>
     </main>
+    <footer>
+        <div class="footer-content">
+            <p>Contact Us: info@calleesquareeyes.com | Phone: 123-456-7890</p>
+            <div class="social-media">
+                <a href="#"><img src="/images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="/images/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="/images/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
