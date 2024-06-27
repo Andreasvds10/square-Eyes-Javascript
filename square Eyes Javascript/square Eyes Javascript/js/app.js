@@ -29,16 +29,16 @@ const products = [
   }
 ];
 
-function displayProducts(filteredProducts = products) {
-  const productsContainer = document.getElementById('products-container');
-  productsContainer.innerHTML = '';
+function displayProducts(containerId, filteredProducts = products) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
 
   filteredProducts.forEach(product => {
     const productElement = document.createElement('div');
-    productElement.classList.add('product');
+    productElement.classList.add('movie');
     productElement.innerHTML = `
       <h2>${product.title}</h2>
-      <img src="${product.image}" alt="${product.title}">
+      <img src="${product.image}" alt="${product.title}" onclick="viewProduct('${product.id}')">
       <p>${product.description}</p>
       <p>Genre: ${product.genre}</p>
       <p>Rating: ${product.rating}</p>
@@ -47,14 +47,14 @@ function displayProducts(filteredProducts = products) {
       ${product.onSale ? `<p>Sale Price: $${product.discountedPrice}</p>` : ''}
       <button onclick="addToCart('${product.id}')">Add to Cart</button>
     `;
-    productsContainer.appendChild(productElement);
+    container.appendChild(productElement);
   });
 }
 
 function filterByGenre() {
   const genreFilter = document.getElementById('genre-filter').value;
   const filteredProducts = genreFilter === 'All' ? products : products.filter(product => product.genre === genreFilter);
-  displayProducts(filteredProducts);
+  displayProducts('products-container', filteredProducts);
 }
 
 function fetchProductById(productId) {
@@ -106,7 +106,7 @@ function displayCart() {
       <h2>${product.title}</h2>
       <img src="${product.image}" alt="${product.title}">
       <p>Quantity: ${item.quantity}</p>
-      <p>Total: $${product.price * item.quantity}</p>
+      <p>Total: $${(product.price * item.quantity).toFixed(2)}</p>
       <button onclick="removeFromCart('${item.id}')">Remove</button>
     `;
     cartContainer.appendChild(cartItemElement);
@@ -115,27 +115,71 @@ function displayCart() {
 
 function removeFromCart(productId) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart = cart.filter(item => item.id !== productId);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  displayCart();
+  const productIndex = cart.findIndex(item => item.id === productId);
+  if (productIndex !== -1) {
+    cart.splice(productIndex, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+  }
 }
 
 function checkout() {
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const orderDetails = {
+    orderNumber: Date.now().toString(),
+    date: new Date(),
+    items: cartItems,
+    totalAmount: cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2)
+  };
+  let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+  orderHistory.push(orderDetails);
+  localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
   localStorage.removeItem('cart');
-  window.location.href = '/checkout/confirmation/index.html';
+  localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+  window.location.href = '/html/confirmation.html';
 }
 
 function viewProduct(productId) {
-  window.location.href = `/product/index.html?id=${productId}`;
+  window.location.href = `/html/product.html?id=${productId}`;
+}
+
+function displayOrderHistory() {
+  const orders = JSON.parse(localStorage.getItem('orderHistory')) || [];
+
+  const ordersContainer = document.getElementById('orders-container');
+  ordersContainer.innerHTML = '';
+
+  if (orders.length === 0) {
+    ordersContainer.innerHTML = '<p>No past orders found.</p>';
+  } else {
+    orders.forEach(order => {
+      const orderElement = document.createElement('div');
+      orderElement.classList.add('order');
+      orderElement.innerHTML = `
+        <h3>Order Number: ${order.orderNumber}</h3>
+        <p>Date: ${new Date(order.date).toLocaleDateString()}</p>
+        <p>Items: ${order.items.length}</p>
+        <p>Total Amount: $${order.totalAmount}</p>
+        <button onclick="viewOrderDetails('${order.orderNumber}')">View Details</button>
+      `;
+      ordersContainer.appendChild(orderElement);
+    });
+  }
+}
+
+function viewOrderDetails(orderNumber) {
+  alert(`Viewing details for order number: ${orderNumber}`);
 }
 
 window.onload = function() {
-  if (window.location.pathname.includes('product/index.html')) {
+  if (window.location.pathname.includes('product.html')) {
     displayProductDetails();
-  } else if (window.location.pathname.includes('checkout/index.html')) {
+  } else if (window.location.pathname.includes('checkout.html')) {
     displayCart();
+  } else if (window.location.pathname.includes('order-history.html')) {
+    displayOrderHistory();
   } else {
-    displayProducts();
+    displayProducts('products-container', products);
     document.getElementById('genre-filter').addEventListener('change', filterByGenre);
   }
 };
