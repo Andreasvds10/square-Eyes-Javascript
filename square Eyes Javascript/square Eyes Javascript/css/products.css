@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:  #121212;
+    background-color: #121212;
     color: #ffffff;
 }
 
@@ -75,6 +75,12 @@ header h1 {
     margin: 0 auto;
 }
 
+.about img {
+    max-width: 40%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
 .about h2, .services h2, .contact h2 {
     color: #f39c12;
     margin-bottom: 10px;
@@ -104,6 +110,72 @@ header h1 {
     position: absolute;
     left: 0;
     color: #f39c12;
+}
+
+.movie-carousel {
+    padding: 40px 20px;
+    text-align: center;
+    background: #1c1c1c;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #1c1c1c;
+    text-align: center;
+}
+
+.carousel-item img {
+    max-width: 20%; /* Adjust this value to make the images smaller */
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-item h3 {
+    margin: 10px 0 0;
+    color: #f39c12;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #ffffff;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
 }
 
 footer {
