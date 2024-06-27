@@ -26,7 +26,8 @@ const products = [
     "image": "https://static.cloud.noroff.dev/api/square-eyes/1-godzilla-king-of-monsters.jpg",
     "tags": ["action", "movie"],
     "favorite": true
-  }
+  },
+  
 ];
 
 function displayProducts(containerId, filteredProducts = products) {
@@ -168,6 +169,7 @@ function displayOrderHistory() {
 }
 
 function viewOrderDetails(orderNumber) {
+
   alert(`Viewing details for order number: ${orderNumber}`);
 }
 
@@ -183,3 +185,12 @@ window.onload = function() {
     document.getElementById('genre-filter').addEventListener('change', filterByGenre);
   }
 };
+
+let carouselIndex = 0;
+
+function moveCarousel(direction) {
+  const items = document.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+  carouselIndex = (carouselIndex + direction + totalItems) % totalItems;
+  document.querySelector('.carousel').style.transform = `translateX(-${carouselIndex * 100}%)`;
+}
