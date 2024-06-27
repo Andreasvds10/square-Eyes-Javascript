@@ -1,0 +1,70 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  #121212;
+    color: #ffffff;
+}
+
+header {
+    background-color: #1c1c1c;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    flex: 1;
+}
+ 
+header h1 {
+    margin: 0;
+    color: #f39c12;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav a {
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #333333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-nav a:hover {
+    background-color: #555555;
+}
+
+main {
+    padding: 20px;
+}
+
+#cart-container {
+    background-color: #1c1c1c;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.checkout-button {
+    padding: 10px;
+    background-color: #f39c12;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkout-button:hover {
+    background-color: #e67e22;
+}

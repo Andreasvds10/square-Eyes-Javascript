@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212;
+  background-color:  #121212;
   color: #ffffff;
 }
 
@@ -12,12 +12,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 .header-title {
   flex: 1;
 }
+
 header h1 {
   margin: 0;
   color: #f39c12;
@@ -42,50 +42,55 @@ header h1 {
   background-color: #555555;
 }
 
-.header-nav select {
-  padding:  10px;
-  margin-left: 10px;
-  background-color: #f39c12;
-  color: #1c1c1c;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   transition: background-color 0.3s;
-}
-
 main {
   padding: 20px;
 }
 
-.product, .cart-item {
-  background-color: #1c1c1c;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.intro, .featured-products, .new-arrivals, .all-products {
+  margin-bottom: 40px;
 }
 
-.product img .cart-item img {
+.intro h2, .featured-products h2, .new-arrivals h2, .all-products h2 {
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1.2em;
+}
+
+#featured-products-container, #new-arrivals-container, #products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  flex: 1 1 calc(33.333% - 20px);
+}
+
+.movie img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.product h2 .cart-item h2 {
+.movie h2 {
   color: #f39c12;
   margin: 0 0 10px 0;
 }
 
-.product p  .cart-item p {
+.movie p {
   margin: 5px 0;
 }
 
-.product button .cart-item button, .checkout-button {
+.movie button {
   padding: 10px;
   background-color: #f39c12;
   color: #1c1c1c;
@@ -95,28 +100,33 @@ main {
   margin-top: 10px;
 }
 
-.product button:hover, .cart-item button:hover, .checkout-button:hover {
+.movie button:hover {
   background-color: #e67e22;
 }
 
-#products-container, #cart-container {
+footer {
+  background-color: #1c1c1c;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.social-media {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 
-
-#product-container {
-  text-align: center;
-}
-
-.checkout-button {
-  display: block;
-  margin: 20px;
-}
-
-.confirmation-message {
-  text-align: center;
-  font-size: 1.5em;
-  color: #f39c12;
+.social-media img {
+  width: 30px;
+  height: 30px;
 }

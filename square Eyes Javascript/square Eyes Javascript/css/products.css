@@ -1,0 +1,171 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  #121212;
+    color: #ffffff;
+}
+
+header {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    flex: 1;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 2em;
+    animation: fadeInDown 1s;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav a {
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.header-nav a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.hero {
+    background: url('/images/hero-image.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s;
+}
+
+.about, .services, .contact {
+    padding: 40px 20px;
+    text-align: center;
+    background: #1c1c1c;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s;
+}
+
+.about-content, .services-content, .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2, .services h2, .contact h2 {
+    color: #f39c12;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    animation: fadeInUp 1s;
+}
+
+.about p, .contact p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    animation: fadeIn 1s;
+}
+
+.services ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #f39c12;
+}
+
+footer {
+    background-color: #1c1c1c;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s;
+}
+
+.footer-content p {
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
