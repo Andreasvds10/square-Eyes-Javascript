@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #121212;
-    color: #ffffff;
+    color: #d3d3d3;
 }
 
 header {
@@ -18,10 +18,15 @@ header {
     flex: 1;
 }
 
-header h1 {
-    margin: 0;
+.header-button {
+    display: inline-block;
     color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 2em;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .header-nav {
@@ -31,7 +36,7 @@ header h1 {
 
 .header-nav a {
     margin: 0 10px;
-    color: #ffffff;
+    color: #d3d3d3;
     text-decoration: none;
     padding: 10px 15px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -77,18 +82,20 @@ h2 {
 
 p {
     font-size: 1.2em;
-    color: #ffffff;
+    color: #d3d3d3;
 }
 
 .footer-content {
-    text-align: center;
+    text-align: center; /* Center the text content */
     padding: 20px;
     background-color: #1c1c1c;
+    max-width: 800px; /* Optional: control the width */
+    margin: 0 auto; /* Center the footer-content block */
 }
 
 .footer-content p {
     margin: 10px 0;
-    color: #ffffff;
+    color: #d3d3d3;
 }
 
 .social-media {

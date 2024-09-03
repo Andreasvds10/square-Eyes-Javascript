@@ -2,12 +2,12 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color:  #121212;
+  background-color: #121212;
   color: #ffffff;
 }
 
 header {
-  background-color: #1c1c1c;
+  background: linear-gradient(45deg, #f39c12, #e67e22);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -18,9 +18,15 @@ header {
   flex: 1;
 }
 
-header h1 {
-  margin: 0;
-  color: #f39c12;
+.header-button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 2em;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .header-nav {
@@ -32,37 +38,40 @@ header h1 {
   margin: 0 10px;
   color: #ffffff;
   text-decoration: none;
-  padding: 10px;
-  background-color: #333333;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .header-nav a:hover {
-  background-color: #555555;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.genre-filter-container {
+  position: relative;
+  left: 100px; /* Move 200px to the right */
+  top: 9px;  /* Move 50px down */
+}
+
+.genre-filter-container select {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.genre-filter-container select:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
 }
 
 main {
   padding: 20px;
-}
-
-.intro, .featured-products, .new-arrivals, .all-products {
-  margin-bottom: 40px;
-}
-
-.intro h2, .featured-products h2, .new-arrivals h2, .all-products h2 {
-  color: #f39c12;
-  margin-bottom: 10px;
-}
-
-.intro p {
-  font-size: 1.2em;
-}
-
-#featured-products-container, #new-arrivals-container, #products-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 }
 
 .movie {
@@ -72,6 +81,7 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   flex: 1 1 calc(33.333% - 20px);
+  margin-bottom: 20px;
 }
 
 .movie img {
@@ -87,7 +97,11 @@ main {
 }
 
 .movie p {
-  margin: 5px 0;
+  margin: 5px auto;  /* Centers the paragraph horizontally */
+  text-align: center; /* Centers the text within the paragraph */
+  max-width: 600px;   /* Limits the width of the paragraph */
+  padding: 0; /* Ensure no extra padding is pushing the text */
+  display: block; /* Ensure it's a block element to respect the width */
 }
 
 .movie button {
@@ -116,9 +130,13 @@ footer {
 }
 
 .footer-content p {
-  margin: 10px 0;
+  margin: 10px auto;  /* Centers the paragraph horizontally */
+  text-align: center; /* Centers the text within the paragraph */
+  max-width: 600px;   /* Limits the width of the paragraph */
+  word-wrap: break-word; /* Ensures long words break onto the next line */
   color: #ffffff;
 }
+
 
 .social-media {
   display: flex;
