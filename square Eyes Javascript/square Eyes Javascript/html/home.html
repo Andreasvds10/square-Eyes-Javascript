@@ -9,20 +9,22 @@
 <body>
     <header>
         <div class="header-title">
-            <h1>Product Details</h1>
+            <a href="/html/products.html" class="header-button">SquareEyes Store</a>
         </div>
         <nav class="header-nav">
-            <a href="/html/products.html">Home</a>
+            <a href="/html/home.html">Products</a>
             <a href="/html/checkout.html">Checkout</a>
-            <a href="/html/confirmation.html">Confirmation</a>
-            <select id="genre-filter" onchange="filterByGenre()">
-                <option value="All">All</option>
-                <option value="Action">Action</option>
-                <option value="Adventure">Adventure</option>
-                <option value="Drama">Drama</option>
-            </select>
+            <a href="/html/policy.html">Policy</a>
         </nav>
     </header>
+    <div class="genre-filter-container">
+        <select id="genre-filter" onchange="filterByGenre()">
+            <option value="All">All</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Drama">Drama</option>
+        </select>
+    </div>
     <main>
         <div id="products-container"></div>
     </main>
