@@ -1,20 +1,20 @@
-let products = []; // Initialize an empty array for products
+let products = []; 
 
-// Fetch products dynamically from an API
+
 async function fetchProducts() {
     try {
-        const response = await fetch('https://api.noroff.dev/api/v1/square-eyes'); // Correct API endpoint
+        const response = await fetch('https://api.noroff.dev/api/v1/square-eyes'); 
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        products = await response.json(); // Parse the JSON data from the API response
-        displayProducts('products-container', products); // Display the fetched products
+        products = await response.json(); 
+        displayProducts('products-container', products); 
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
 }
 
-// Display products in the specified container
+
 function displayProducts(containerId, filteredProducts = products) {
     const container = document.getElementById(containerId);
     container.innerHTML = '';
@@ -37,7 +37,7 @@ function displayProducts(containerId, filteredProducts = products) {
     });
 }
 
-// Function to filter products by genre
+
 function filterByGenre() {
     const selectedGenre = document.getElementById('genre-filter').value;
     let filteredProducts;
@@ -51,7 +51,7 @@ function filterByGenre() {
     displayProducts('products-container', filteredProducts);
 }
 
-// Add product to the cart
+
 function addToCart(productId) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingProduct = cart.find(item => item.id === productId);
@@ -67,7 +67,7 @@ function addToCart(productId) {
     alert('Product added to cart');
 }
 
-// Display the cart items on the checkout page
+
 function displayCart() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart-container');
@@ -92,7 +92,7 @@ function displayCart() {
     });
 }
 
-// Remove product from the cart
+
 function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const productIndex = cart.findIndex(item => item.id === productId);
@@ -103,7 +103,7 @@ function removeFromCart(productId) {
     }
 }
 
-// Handle checkout process
+
 function checkout() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     if (cartItems.length === 0) {
@@ -126,15 +126,15 @@ function checkout() {
     window.location.href = '/html/confirmation.html';
 }
 
-// Initialize page content on load
+
 window.onload = function() {
     if (window.location.pathname.includes('checkout.html')) {
-        displayCart(); // Display cart items on checkout page
+        displayCart(); 
     } else {
-        fetchProducts(); // Fetch products dynamically
+        fetchProducts(); 
     }
 };
 
-// Example console log for testing purposes
+
 let x = "Please, let me pass";
 console.log(x);
