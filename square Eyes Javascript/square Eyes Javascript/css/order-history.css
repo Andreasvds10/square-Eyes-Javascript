@@ -86,11 +86,11 @@ p {
 }
 
 .footer-content {
-    text-align: center; /* Center the text content */
+    text-align: center; 
     padding: 20px;
     background-color: #1c1c1c;
-    max-width: 800px; /* Optional: control the width */
-    margin: 0 auto; /* Center the footer-content block */
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
 .footer-content p {
