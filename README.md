@@ -1,1 +1,1 @@
-# square-Eyes-Javascript
+# square-Eyes
