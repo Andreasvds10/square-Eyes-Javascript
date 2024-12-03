@@ -49,12 +49,14 @@ bash
 Kopier kode
 git clone https://github.com/Andreasvds10/square-Eyes-Javascript.git
 Navigate to the project folder:
-bash
+
+
 Kopier kode
 cd square-Eyes-Javascript
 Open html/home.html in your browser to start the application.
+
 File Structure
-bash
+
 Kopier kode
 square-Eyes-Javascript/
 ├── css/
@@ -76,6 +78,8 @@ square-Eyes-Javascript/
 │   ├── app.js           # Main JavaScript file
 │   ├── hi.js            # Additional script
 └── .vscode/             # VS Code workspace settings
+
+
 Key Features
 Dynamic Product Display
 
@@ -98,6 +102,7 @@ Browser Compatibility: Tested on Chrome, Firefox, Safari, and Edge.
 Responsive Design: Verified on various screen sizes.
 Accessibility: Complies with WCAG standards to ensure inclusivity.
 Debugging: All console.log statements have been removed for final delivery.
+
 Reflection
 What I Learned:
 Working with external APIs and dynamically rendering content.
