@@ -123,7 +123,7 @@ function checkout() {
     localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
     localStorage.removeItem('cart');
     localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-    window.location.href = '/html/confirmation.html';
+    window.location.href = 'confirmation.html';
 }
 
 
