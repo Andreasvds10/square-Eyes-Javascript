@@ -25,9 +25,7 @@ Using API to retrieve dynamic data.
 git clone https://github.com/Andreasvds10/square-Eyes-Javascript.git
 ```
 
-2. Install the dependencies:
-
-Navigate to the project directory:
+2. Navigate to the project directory:
 
 ```bash
 cd square-Eyes-Javascript
