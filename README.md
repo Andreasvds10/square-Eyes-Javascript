@@ -38,9 +38,9 @@ cd square-Eyes-Javascript
 
 To run the app, run the following commands:
 
-Locate the home.html file in the html folder.
+Locate the index.html file.
 
-Open the home.html file with a web browser. (Right click -> open with Google Chrome / Firefox / Safari / Edge, etc)
+Open the index.html file with a web browser. (Right click -> open with Google Chrome / Firefox / Safari / Edge, etc)
 
 ## Contact
 
