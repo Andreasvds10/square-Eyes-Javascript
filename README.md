@@ -1,21 +1,24 @@
-# Your project title
+# Movie Store with Dynamic Data
 
 ![image](https://raw.githubusercontent.com/Andreasvds10/square-Eyes-Javascript/refs/heads/main/Overviewsquare.PNG)
 
-Movie Store with dynamic data
+The **Square Eyes** online store provides users with the ability to:
 
-## Description
+- View and filter a list of products.
+- Access detailed information about individual products.
+- Add and remove items from their shopping basket.
+- Proceed through a checkout process with a final confirmation screen.
 
-The Square Eyes online store offers users the ability to:
+This project focuses on **JavaScript functionality** while maintaining usability and accessibility. The app retrieves dynamic data using an API.
 
-View and filter a list of products.
-Access detailed information about individual products.
-Add and remove items from their shopping basket.
-Proceed through a checkout process with a final confirmation screen.
-This project focuses on JavaScript functionality while maintaining usability and accessibility.
-Using API to retrieve dynamic data.
 
-## Getting Started
+## Features
+
+- Product filtering and sorting.
+- Dynamic product pages with detailed information.
+- Shopping basket with add/remove functionality.
+- Fully responsive and accessible design.
+- Integration with an API for dynamic data.
 
 ### Installing
 
@@ -35,9 +38,9 @@ cd square-Eyes-Javascript
 
 To run the app, run the following commands:
 
-Locate the home.html file inside the html folder.
+Locate the home.html file in the html folder.
 
-Open the html/home.html file with a webbrowser. (Right click -> open with Google Chrome / Firefox / Safari / Edge, etc)
+Open the home.html file with a web browser. (Right click -> open with Google Chrome / Firefox / Safari / Edge, etc)
 
 ## Contact
 
