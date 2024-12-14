@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="square Eyes Javascript/square Eyes Javascript/css/home.css">
+    <title>SquareEyes Store</title>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <a href="/square Eyes Javascript/square Eyes Javascript/html/products.html" class="header-button">SquareEyes Store</a>
+        </div>
+        <nav class="header-nav">
+            <a href="/square Eyes Javascript/square Eyes Javascript/html/home.html">Products</a>
+            <a href="/square Eyes Javascript/square Eyes Javascript/html/checkout.html">Checkout</a>
+            <a href="/square Eyes Javascript/square Eyes Javascript/html/policy.html">Policy</a>
+        </nav>
+    </header>
+    <div class="genre-filter-container">
+        <select id="genre-filter" onchange="filterByGenre()">
+            <option value="All">All</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Drama">Drama</option>
+        </select>
+    </div>
+    <main>
+        <div id="products-container"></div>
+    </main>
+    <script src="/square Eyes Javascript/square Eyes Javascript/js/app.js"></script>
+</body>
+</html>
